@@ -1,6 +1,6 @@
 # Tasklane
 
-![CI](https://github.com/YOUR_GITHUB_USERNAME/tasklane/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/JeanAns1/tasklane/actions/workflows/ci.yml/badge.svg)
 ![Node.js](https://img.shields.io/badge/Node.js-20-339933?logo=node.js&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
@@ -19,7 +19,7 @@ service and a **PostgreSQL** database — all orchestrated with **Docker Compose
 The only requirement is [Docker](https://docs.docker.com/get-docker/) (with Docker Compose v2).
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/tasklane.git
+git clone https://github.com/JeanAns1/tasklane.git
 cd tasklane
 docker compose up --build
 ```

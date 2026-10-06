@@ -1,6 +1,6 @@
-# Tasklane
+﻿# Tasklane
 
-![CI](https://github.com/YOUR_GITHUB_USERNAME/tasklane/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/JeanAns1/tasklane/actions/workflows/ci.yml/badge.svg)
 ![Node.js](https://img.shields.io/badge/Node.js-20-339933?logo=node.js&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
@@ -8,7 +8,7 @@
 
 A task board with a live progress dashboard, built as a small microservice system:
 a **React** front-end, a **Node.js / Express** REST API, a **Python / FastAPI** analytics
-service and a **PostgreSQL** database — all orchestrated with **Docker Compose**.
+service and a **PostgreSQL** database â€” all orchestrated with **Docker Compose**.
 
 ![Tasklane screenshot](docs/screenshot.png)
 
@@ -19,7 +19,7 @@ service and a **PostgreSQL** database — all orchestrated with **Docker Compose
 The only requirement is [Docker](https://docs.docker.com/get-docker/) (with Docker Compose v2).
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/tasklane.git
+git clone https://github.com/JeanAns1/tasklane.git
 cd tasklane
 docker compose up --build
 ```
@@ -37,7 +37,7 @@ To stop the application, press `Ctrl + C`, then run `docker compose down`
 ## Features
 
 - Create tasks with a priority and an optional due date
-- Move tasks across three lanes: **To do → In progress → Done**
+- Move tasks across three lanes: **To do â†’ In progress â†’ Done**
 - Dashboard with tasks completed per day over the last 14 days, open / overdue / due-soon counts and overall completion rate
 - Responsive layout, light and dark mode, keyboard accessible
 
@@ -105,27 +105,27 @@ FastAPI also generates interactive docs. To browse them, expose the service port
 
 ```
 tasklane/
-├── docker-compose.yml          # Orchestrates the 4 services
-├── .env.example                # Optional overrides
-├── .github/workflows/ci.yml    # Tests + Docker build on every push / PR
-└── services/
-    ├── tasks-api/              # Node.js / Express
-    │   ├── Dockerfile
-    │   ├── src/
-    │   │   ├── app.js          # Express app factory
-    │   │   ├── index.js        # Entry point (Postgres wiring, graceful shutdown)
-    │   │   ├── validation.js
-    │   │   ├── routes/tasks.js
-    │   │   └── repositories/   # postgresRepository.js, memoryRepository.js
-    │   └── tests/
-    ├── analytics-api/          # Python / FastAPI
-    │   ├── Dockerfile
-    │   ├── app/                # main.py, stats.py, schemas.py
-    │   └── tests/
-    └── frontend/               # React / Vite
-        ├── Dockerfile          # Multi-stage: build with Node, serve with Nginx
-        ├── nginx.conf
-        └── src/
+â”œâ”€â”€ docker-compose.yml          # Orchestrates the 4 services
+â”œâ”€â”€ .env.example                # Optional overrides
+â”œâ”€â”€ .github/workflows/ci.yml    # Tests + Docker build on every push / PR
+â””â”€â”€ services/
+    â”œâ”€â”€ tasks-api/              # Node.js / Express
+    â”‚   â”œâ”€â”€ Dockerfile
+    â”‚   â”œâ”€â”€ src/
+    â”‚   â”‚   â”œâ”€â”€ app.js          # Express app factory
+    â”‚   â”‚   â”œâ”€â”€ index.js        # Entry point (Postgres wiring, graceful shutdown)
+    â”‚   â”‚   â”œâ”€â”€ validation.js
+    â”‚   â”‚   â”œâ”€â”€ routes/tasks.js
+    â”‚   â”‚   â””â”€â”€ repositories/   # postgresRepository.js, memoryRepository.js
+    â”‚   â””â”€â”€ tests/
+    â”œâ”€â”€ analytics-api/          # Python / FastAPI
+    â”‚   â”œâ”€â”€ Dockerfile
+    â”‚   â”œâ”€â”€ app/                # main.py, stats.py, schemas.py
+    â”‚   â””â”€â”€ tests/
+    â””â”€â”€ frontend/               # React / Vite
+        â”œâ”€â”€ Dockerfile          # Multi-stage: build with Node, serve with Nginx
+        â”œâ”€â”€ nginx.conf
+        â””â”€â”€ src/
 ```
 
 ## Local development (without Docker)
@@ -133,18 +133,18 @@ tasklane/
 Requirements: Node.js 20+, Python 3.12+, a PostgreSQL instance.
 
 ```bash
-# 1. Tasks API  →  http://localhost:3000
+# 1. Tasks API  â†’  http://localhost:3000
 cd services/tasks-api
 npm install
 DATABASE_URL=postgres://tasklane:tasklane@localhost:5432/tasklane npm run dev
 
-# 2. Analytics API  →  http://localhost:8000
+# 2. Analytics API  â†’  http://localhost:8000
 cd services/analytics-api
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements-dev.txt
 uvicorn app.main:app --reload
 
-# 3. Frontend  →  http://localhost:5173 (Vite proxies /api to the two services)
+# 3. Frontend  â†’  http://localhost:5173 (Vite proxies /api to the two services)
 cd services/frontend
 npm install
 npm run dev
@@ -163,9 +163,9 @@ The same checks run in GitHub Actions on every push and pull request, followed b
 
 ## Git workflow
 
-- `main` — stable, release-ready code
-- `develop` — integration branch
-- `feature/*` and `fix/*` — created from `develop`, merged back through pull requests
+- `main` â€” stable, release-ready code
+- `develop` â€” integration branch
+- `feature/*` and `fix/*` â€” created from `develop`, merged back through pull requests
 
 ## Roadmap
 
@@ -176,4 +176,4 @@ The same checks run in GitHub Actions on every push and pull request, followed b
 
 ## License
 
-[MIT](LICENSE) © Jean Ans-Lee RAHARINIRINA
+[MIT](LICENSE) Â© Jean Ans-Lee RAHARINIRINA

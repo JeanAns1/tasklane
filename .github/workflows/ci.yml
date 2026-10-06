@@ -5,13 +5,15 @@ on:
     branches: [main, develop]
   pull_request:
     branches: [main, develop]
-workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   tasks-api:
     name: Tasks API (Node.js)
     runs-on: ubuntu-latest
-    defaults: { run: { working-directory: services/tasks-api } }
+    defaults:
+      run:
+        working-directory: services/tasks-api
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,7 +27,9 @@ jobs:
   analytics-api:
     name: Analytics API (Python)
     runs-on: ubuntu-latest
-    defaults: { run: { working-directory: services/analytics-api } }
+    defaults:
+      run:
+        working-directory: services/analytics-api
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -38,7 +42,9 @@ jobs:
   frontend:
     name: Frontend build (React)
     runs-on: ubuntu-latest
-    defaults: { run: { working-directory: services/frontend } }
+    defaults:
+      run:
+        working-directory: services/frontend
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

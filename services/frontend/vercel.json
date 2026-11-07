@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/api/tasks/:path*", "destination": "https://tasklane-tasks-api.onrender.com/api/tasks/:path*" },
+    { "source": "/api/analytics/:path*", "destination": "https://tasklane-analytics-api.onrender.com/api/analytics/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
